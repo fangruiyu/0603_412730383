@@ -1,5 +1,6 @@
 function preload(){  //我的圖片檔
   img = loadImage("upload_7dd6374659c38a191c0e3eb86f1d75c5.gif")
+  catImg = loadImage("animated-cat-image-0072.gif")
   }
   
   let video, bodypose, pose, keypoint, detector;
@@ -90,6 +91,7 @@ function preload(){  //我的圖片檔
        
        
       }
+      /*
       // hip to hip
       partA = pose.keypoints[11];
       partB = pose.keypoints[12];
@@ -119,6 +121,7 @@ function preload(){  //我的圖片檔
          
         }
       }
+      */
     }
   }
   
