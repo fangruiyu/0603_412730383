@@ -57,11 +57,11 @@ function drawSkeleton() {
     pose = poses[i];
     let nose = pose.keypoints[0];
 
-    if (nose.score > 0.1){
-      push();
-      textSize(40);
-      fill(255, 0, 0); // 文字顏色
-      scale(-1, 1);
+   // if (nose.score > 0.1){
+   //   push();
+   //   textSize(40);
+   //   fill(255, 0, 0); // 文字顏色
+   //   scale(-1, 1);
       
       pop();
     }
@@ -111,7 +111,7 @@ function drawSkeleton() {
        //fill("#ff0000")
        //ellipse(partA.x,partA.y,50)
        //fill("#ffffff")
-       text("412730383,游芳叡", -nose.x-100, nose.y - 150);
+       text("412730383,游芳叡", -nose.x-100, nose.y - 500);
      }
  
   }
