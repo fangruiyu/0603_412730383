@@ -104,15 +104,7 @@ function drawSkeleton() {
         line(partA.x, partA.y, partB.x, partB.y);
       }
     }
-     //nose
-     partA = pose.keypoints[0];
-     if(partA.score > 0.1)
-     {
-       //fill("#ff0000")
-       //fill("#ffffff")
-       text("412730383,游芳叡", -nose.x-100, nose.y - 500);
-     }
- 
+    
   }
 }
 
