@@ -62,7 +62,7 @@ function drawSkeleton() {
       textSize(40);
       fill(255, 0, 0); // 文字顏色
       scale(-1, 1);
-      text("412730383,游芳叡", -nose.x, nose.y);
+      
       pop();
     }
     // shoulder to wrist
@@ -104,6 +104,16 @@ function drawSkeleton() {
         line(partA.x, partA.y, partB.x, partB.y);
       }
     }
+     //nose
+     partA = pose.keypoints[0];
+     if(partA.score > 0.1)
+     {
+       //fill("#ff0000")
+       //ellipse(partA.x,partA.y,50)
+       //fill("#ffffff")
+       text("412730383,游芳叡", -nose.x, nose.y - 50);
+     }
+ 
   }
 }
 
