@@ -62,15 +62,15 @@ function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
     pose = poses[i];
-    partA = pose.keypoints[0];
+    let nose = pose.keypoints[0];
 
-    if (partA.score > 0.1){
-      push()
-        textSize(40)
-        scale(-1,1)
-        text("412730383,游芳叡",partA.x-width,partA-150)
-      pop()
-      
+    if (nose.score > 0.1){
+      push();
+      textSize(40);
+      fill(255, 0, 0); // 文字顏色
+      scale(-1, 1);
+      text("412730383,游芳叡", -nose.x, nose.y - 150);
+      pop();
     }
     // shoulder to wrist
     for (j = 5; j < 9; j++) {
