@@ -4,7 +4,11 @@ MoveNet is developed by TensorFlow:
 https://www.tensorflow.org/hub/tutorials/movenet
 
 */
-
+var mountainImg,landImg,noiseImg
+function preload(){
+  Img= loadImage("upload_7dd6374659c38a191c0e3eb86f1d75c5.gif")
+  
+}
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
 
@@ -16,6 +20,23 @@ async function init() {
     poseDetection.SupportedModels.MoveNet,
     detectorConfig
   );
+}
+function drawKeypoints()  {  
+  for (let i = 0; i < pose.keypoints.length; i++) {
+    let x = pose.keypoints[i].position.x;//找出每一個點的x座標
+    let y = pose.keypoints[i].position.y;//找出每一個點的y座標
+    fill(0,255,0);
+    ellipse(x,y,16,16);
+  }
+}
+function drawSkeleton()  {
+  for (let i = 0; i < skeleton.length; i++) {
+    let a = skeleton[i][0];
+    let b = skeleton[i][1];			
+    strokeWeight(2);
+    stroke(255);
+    line(a.position.x, a.position.y,b.position.x,b.position.y);			
+  }
 }
 
 async function videoReady() {
