@@ -84,8 +84,8 @@ function preload(){  //我的圖片檔
       if (partA.score > 0.1 && partB.score > 0.1) {
           //line(partA.x, partA.y, partB.x, partB.y);
       push()
-        image(dogImg,partA.x, partA.y,150,150)  //左邊手
-        image(dogImg,partB.x, partB.y,150,150)  //右邊手
+        image(img,partA.x, partA.y,150,150)  //左邊手
+        image(img,partB.x, partB.y,150,150)  //右邊手
       pop()
        
        
