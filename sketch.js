@@ -57,14 +57,14 @@ function drawSkeleton() {
     pose = poses[i];
     let nose = pose.keypoints[0];
 
-   // if (nose.score > 0.1){
-   //   push();
-   //   textSize(40);
-   //   fill(255, 0, 0); // 文字顏色
-   //   scale(-1, 1);
+   if (nose.score > 0.1){
+    push();
+    textSize(40);
+    fill(255, 0, 0); // 文字顏色
+    scale(-1, 1);
       
-    //  pop();
-    //}
+    pop();
+    }
     // shoulder to wrist
     for (let j = 5; j < 9; j++) {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
