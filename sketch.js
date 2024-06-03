@@ -128,11 +128,11 @@ function drawSkeleton() {
     partR = pose.keypoints[2];
     if(partL.score > 0.1)
     {
-      image(Img,0,0,landImg.width,landImg.height)
+      image(Img,partL.x,partL.y,landImg.width,landImg.height)
     }
     if(partR.score > 0.1)
     {
-      image(Img,0,0,landImg.width,landImg.height)
+      image(Img,partL.x,partL.y,landImg.width,landImg.height)
     }
   }
 }
