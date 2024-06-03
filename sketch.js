@@ -59,10 +59,10 @@ function drawSkeleton() {
 
    if (nose.score > 0.1){
     push();
-    textSize(40);
-    fill(255, 0, 0); // 文字顏色
-    scale(-1, 1);
-      
+      textSize(40);
+      fill(255, 0, 0); // 文字顏色
+      scale(-1, 1);
+      text("412730383,游芳叡", -nose.x-100, nose.y - 500);  
     pop();
     }
     // shoulder to wrist
@@ -109,7 +109,6 @@ function drawSkeleton() {
      if(partA.score > 0.1)
      {
        //fill("#ff0000")
-       //ellipse(partA.x,partA.y,50)
        //fill("#ffffff")
        text("412730383,游芳叡", -nose.x-100, nose.y - 500);
      }
