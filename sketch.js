@@ -1,5 +1,5 @@
 let video, bodypose, pose, keypoint, detector;
-//let poses = [];
+let poses = [];
 
 var Img;
 function preload(){
