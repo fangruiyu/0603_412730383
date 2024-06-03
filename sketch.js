@@ -1,11 +1,17 @@
-let video, detector;
+/* MoveNet Skeleton - Steve's Makerspace (most of this code is from TensorFlow)
+
+MoveNet is developed by TensorFlow:
+https://www.tensorflow.org/hub/tutorials/movenet
+
+*/
+
+let video, bodypose, pose, keypoint, detector;
 let poses = [];
 
-var Img;
+var Img
 function preload(){
-  Img = loadImage("upload_7dd6374659c38a191c0e3eb86f1d75c5.gif");
+	Img= loadImage("upload_7dd6374659c38a191c0e3eb86f1d75c5.gif")
 }
-
 async function init() {
   const detectorConfig = {
     modelType: poseDetection.movenet.modelType.MULTIPOSE_LIGHTNING,
@@ -25,6 +31,7 @@ async function getPoses() {
   if (detector) {
     poses = await detector.estimatePoses(video.elt, {
       maxPoses: 2,
+      //flipHorizontal: true,
     });
   }
   requestAnimationFrame(getPoses);
@@ -45,9 +52,8 @@ function draw() {
   image(video, 0, 0);
   drawSkeleton();
   // flip horizontal
-  let cam = get();
+  cam = get();
   translate(cam.width, 0);
-  scale(-1, 1);
   scale(-1, 1);
   image(cam, 0, 0);
 }
@@ -55,57 +61,62 @@ function draw() {
 function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
-    let poses = []
-    let pose = poses[i];
-    let nose = pose.keypoints[0];
+    pose = poses[i];
+    partA = pose.keypoints[0];
 
-    if (nose.score > 0.1){
-      push();
-      textSize(40);
-      fill(255, 0, 0); // 文字顏色
-      scale(-1, 1);
-      text("412730383,游芳叡", -nose.x, nose.y - 150);
-      pop();
+    if (partA.score > 0.1){
+      push()
+        textSize(40)
+        scale(-1,1)
+        text("412730383,游芳叡",partA.x-width,partA-150)
+      pop()
+      
     }
     // shoulder to wrist
-    for (let j = 5; j < 9; j++) {
-      if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
-        let partA = pose.keypoints[j];
-        let partB = pose.keypoints[j + 2];
-        line(partA.x, partA.y, partB.x, partB.y);
-      }
-    }
-    // shoulder to shoulder
-    let partA = pose.keypoints[5];
-    let partB = pose.keypoints[6];
-    if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
-    }
-    // hip to hip
-    partA = pose.keypoints[11];
-    partB = pose.keypoints[12];
-    if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
-    }
-    // shoulders to hips
-    partA = pose.keypoints[5];
-    partB = pose.keypoints[11];
-    if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
-    }
-    partA = pose.keypoints[6];
-    partB = pose.keypoints[12];
-    if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
-    }
-    // hip to foot
-    for (let j = 11; j < 15; j++) {
+    for (j = 5; j < 9; j++) {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
         partA = pose.keypoints[j];
         partB = pose.keypoints[j + 2];
         line(partA.x, partA.y, partB.x, partB.y);
       }
     }
+    // shoulder to shoulder
+    partA = pose.keypoints[5];
+    partB = pose.keypoints[6];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      line(partA.x, partA.y, partB.x, partB.y);
+      
+    }
+    // hip to hip
+    partA = pose.keypoints[11];
+    partB = pose.keypoints[12];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      line(partA.x, partA.y, partB.x, partB.y);
+      
+    }
+    // shoulders to hips
+    partA = pose.keypoints[5];
+    partB = pose.keypoints[11];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      line(partA.x, partA.y, partB.x, partB.y);
+      
+    }
+    partA = pose.keypoints[6];
+    partB = pose.keypoints[12];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      line(partA.x, partA.y, partB.x, partB.y);
+      
+    }
+    // hip to foot
+    for (j = 11; j < 15; j++) {
+      if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
+        partA = pose.keypoints[j];
+        partB = pose.keypoints[j + 2];
+        line(partA.x, partA.y, partB.x, partB.y);
+        
+      }
+    }
+
   }
 }
 
@@ -123,7 +134,7 @@ function drawSkeleton() {
   10 right wrist
   11 left hip
   12 right hip
-  13 left knee
+  13 left kneee
   14 right knee
   15 left foot
   16 right foot
