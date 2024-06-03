@@ -1,4 +1,4 @@
-let video, bodypose, pose, keypoint, detector;
+let video, detector;
 let poses = [];
 
 var Img;
@@ -45,7 +45,7 @@ function draw() {
   image(video, 0, 0);
   drawSkeleton();
   // flip horizontal
-  cam = get();
+  let cam = get();
   translate(cam.width, 0);
   scale(-1, 1);
   image(cam, 0, 0);
@@ -54,7 +54,7 @@ function draw() {
 function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
-    pose = poses[i];
+    let pose = poses[i];
     let nose = pose.keypoints[0];
 
     if (nose.score > 0.1){
@@ -62,7 +62,7 @@ function drawSkeleton() {
       textSize(40);
       fill(255, 0, 0); // 文字顏色
       scale(-1, 1);
-      text("412730383,游芳叡", -nose.x, nose.y);
+      text("412730383,游芳叡", -nose.x, nose.y - 150);
       pop();
     }
     // shoulder to wrist
