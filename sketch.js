@@ -90,6 +90,16 @@ function preload(){  //我的圖片檔
        
        
       }
+      //eyes
+      partA = pose.keypoints[1];
+      partB = pose.keypoints[2];
+      if (partA.score > 0.1 && partB.score > 0.1) {
+      push()
+        image(img,partA.x, partA.y,150,150)  //左邊眼睛
+        image(img,partB.x, partB.y,150,150)  //右邊眼睛
+      pop()
+       
+      }
       // hip to hip
       partA = pose.keypoints[11];
       partB = pose.keypoints[12];
