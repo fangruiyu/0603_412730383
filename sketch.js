@@ -54,6 +54,7 @@ function draw() {
 function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
+    let poses = []
     let pose = poses[i];
     let nose = pose.keypoints[0];
 
