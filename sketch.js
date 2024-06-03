@@ -90,7 +90,7 @@ function preload(){  //我的圖片檔
        
        
       }
-      /*
+    
       // hip to hip
       partA = pose.keypoints[11];
       partB = pose.keypoints[12];
@@ -120,7 +120,7 @@ function preload(){  //我的圖片檔
          
         }
       }
-      */
+      
     }
   }
   
