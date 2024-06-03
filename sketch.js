@@ -111,7 +111,7 @@ function drawSkeleton() {
        //fill("#ff0000")
        //ellipse(partA.x,partA.y,50)
        //fill("#ffffff")
-       text("412730383,游芳叡", -nose.x, nose.y - 50);
+       text("412730383,游芳叡", -nose.x-100, nose.y - 150);
      }
  
   }
