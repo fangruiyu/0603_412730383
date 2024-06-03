@@ -8,6 +8,10 @@ https://www.tensorflow.org/hub/tutorials/movenet
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
 
+var Img
+function preload(){
+	Img= loadImage("upload_7dd6374659c38a191c0e3eb86f1d75c5.gif")
+}
 async function init() {
   const detectorConfig = {
     modelType: poseDetection.movenet.modelType.MULTIPOSE_LIGHTNING,
