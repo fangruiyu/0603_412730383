@@ -48,12 +48,14 @@ function draw() {
   let cam = get();
   translate(cam.width, 0);
   scale(-1, 1);
+  scale(-1, 1);
   image(cam, 0, 0);
 }
 
 function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
+    let poses = []
     let pose = poses[i];
     let nose = pose.keypoints[0];
 
