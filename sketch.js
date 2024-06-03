@@ -62,7 +62,7 @@ function drawSkeleton() {
       textSize(40);
       fill(255, 0, 0); // 文字顏色
       scale(-1, 1);
-      text("412730383,游芳叡", -nose.x-100, nose.y - 500);  
+      text("412730383,游芳叡", -nose.x-100, nose.y - 150);  
     pop();
     }
     // shoulder to wrist
