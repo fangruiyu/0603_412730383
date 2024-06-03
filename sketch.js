@@ -124,7 +124,7 @@ function drawSkeleton() {
       }
     }
     //eyes
-    partL = pose.keypoints[1];
+    /*partL = pose.keypoints[1];
     partR = pose.keypoints[2];
     if(partL.score > 0.1)
     {
@@ -132,8 +132,8 @@ function drawSkeleton() {
     }
     if(partR.score > 0.1)
     {
-      image(Img,partL.x,partL.y,landImg.width,landImg.height)
-    }
+      image(Img,partR.x,partR.y,landImg.width,landImg.height)
+    }*/
   }
 }
 
