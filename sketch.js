@@ -68,7 +68,7 @@ function drawSkeleton() {
       push()
         textSize(40)
         scale(-1,1)
-        text("412730383,游芳叡",partA.x-width,partA-150)
+        text("412730383,游芳叡",partA.x-width,partA-50)
       pop()
       
     }
